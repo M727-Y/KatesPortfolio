@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Pro-Medium';
+  src: url('../fonts/ITC\ Avant\ Garde\ Gothic\ Pro-Medium.otf') format('truetype');
+  /* Add more font formats and variations if needed */
+}
+
+$bg-color: #F8FAFC;
+
+body {
+  font-family: 'ITC Avant Garde Gothic Pro-Medium';
+
+  cursor: none;
+  background-color: $bg-color;
+}
+
+.main-container {
+  padding: 0 5vw;
+  // clip-path: inset(100% 0% 0% 0%);
+  // backface-visibility: hidden;
+}
+
+section {
+  padding:  0;
+  .section-header {
+    margin-bottom: 50px;
+  }
+}
+.absolute {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  z-index: 1;
+}
+
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: "all 0.25s ease-in-out";
+  background-color: #191919;
+  color: #dbd8d6;
+  h1 {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 1.5vw;
+
+    text-transform: uppercase;
+    font-family: "Bodoni Moda", serif;
+    font-style: italic;
+    margin-top: 10px;
+  }
+}

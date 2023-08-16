@@ -12,13 +12,14 @@ const NavbarContainer = styled.nav`
     height:6.25%;
     padding:0 10%;
     z-index:10;
-    img{
-      height:100%;
+    div{
+      display: flex;
+      align-items: center; 
     }
 `;
 
 const NavButtons = styled.nav`
-    width:40%;
+    width:50%;
     
     display:flex;
     justify-content:space-between;

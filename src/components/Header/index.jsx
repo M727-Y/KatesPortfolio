@@ -37,7 +37,7 @@ const CustomButton = styled.a`
     border-radius:5rem;
     color:#CDD5E0;
     margin:1%;
-    width:30%;
+    width:40%;
     padding:2%;
     text-align:center;
     

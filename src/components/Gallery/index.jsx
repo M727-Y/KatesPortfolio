@@ -5,7 +5,10 @@ import useOnScreen from "../../hooks/useOnScreen";
 import cn from "classnames";
 import { styled } from 'styled-components'
 import "./style.scss";
-
+import project1 from '../../images/ux/project1.png';
+import project2 from '../../images/ux/project2.png';
+import project3 from '../../images/ux/project3.png';
+import project4 from '../../images/ux/project4.png';
 const images = [
   {
     src:
@@ -49,8 +52,8 @@ function GalleryItem({
       <div></div>
       <div className={"gallery-item"}>
         <div className='uxui'>
-          {projectListUxUi.map((image, index)=>(
-              <ProjectImage key={image.src} index={index}></ProjectImage>
+          {projectListUxUi.map((el, index)=>(
+              <ProjectImage key={el.src} imgSrc={el.src} index={index}></ProjectImage>
           ))}
         </div>
       </div>
@@ -59,26 +62,31 @@ function GalleryItem({
   );
 }
 
-const ProjectImage = styled.div`
-    height:80%;
-    width:20%;
-    background-color:#000;  
-`
+
+const ProjectImage = ({imgSrc, link,key}) => {
+  return(
+    <div className="project-image">
+      
+      <img src={imgSrc}></img>
+    </div>
+  )
+}
+
 const projectListUxUi = [
   {
-      src:"",
+      src:project1,
       link:""
   },
   {
-      src:"",
+      src:project2,
       link:""
   },
   {
-      src:"",
+      src:project3,
       link:""
   },
   {
-      src:"",
+      src:project4,
       link:""
   },
 ]

@@ -60,8 +60,7 @@ const Home = () => {
       
       {preloader ? (
         <div className="loader-wrapper absolute">
-          <h1>Flirty flowers</h1>
-          <h2>Rio de Janeiro</h2>
+          <h1>The website is loading...</h1>
         </div>
       ) : (
         <div

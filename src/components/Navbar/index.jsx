@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from '../../images/logo.png';
 const NavbarContainer = styled.nav`
     position: fixed;
+    
     top: 0;
     left: 0;
     width: 80%;
@@ -27,8 +28,13 @@ const NavButtons = styled.nav`
     
 `
 
-const Button = styled.button`
+const Button = styled.div`
     width:15%;
+    
+    display: flex;
+    align-items: center; /* Vertically center align items */
+    justify-content: center;
+    
     font-size: 1rem;
     font-family:'ITC Avant Garde Gothic Pro-Medium';
     background-color:#F8FAFC;
@@ -40,11 +46,14 @@ const Button = styled.button`
         background-color: #000;
         color: #fff; 
       }
+    a{
+      text-align:center;
+    }
 `;
 
 
 const NavButton = ({ label, onClick }) => {
-    return <Button onClick={onClick}>{label}</Button>;
+    return <Button onClick={onClick}><a>{label}</a></Button>;
   };
 
 export default function Navbar() {

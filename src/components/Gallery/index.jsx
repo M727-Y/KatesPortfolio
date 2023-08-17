@@ -9,6 +9,14 @@ import project1 from '../../images/ux/project1.png';
 import project2 from '../../images/ux/project2.png';
 import project3 from '../../images/ux/project3.png';
 import project4 from '../../images/ux/project4.png';
+import grproject1 from '../../images/graphic/project1.png';
+import grproject2 from '../../images/graphic/project2.png';
+import grproject3 from '../../images/graphic/project3.png';
+import grproject4 from '../../images/graphic/project4.png';
+import grproject5 from '../../images/graphic/project5.png';
+import grproject6 from '../../images/graphic/project6.png';
+import grproject7 from '../../images/graphic/project7.png';
+
 const images = [
   {
     projects: [
@@ -34,19 +42,31 @@ const images = [
   {
     projects: [
       {
-          src:"",
+          src:grproject1,
           link:""
       },
       {
-          src:project2,
+          src:grproject2,
           link:""
       },
       {
-          src:project3,
+          src:grproject3,
           link:""
       },
       {
-          src:project4,
+          src:grproject4,
+          link:""
+      },
+      {
+          src:grproject5,
+          link:""
+      },
+      {
+          src:grproject6,
+          link:""
+      },
+      {
+          src:grproject7,
           link:""
       },
     ]
@@ -74,11 +94,17 @@ function GalleryItem({
     >
       <div></div>
       <div className={"gallery-item"}>
-        <div className='uxui'>
-          {projects.map((el, index)=>(
-              <ProjectImage key={el.src} imgSrc={el.src} index={index}></ProjectImage>
-          ))}
+        <div className={projects.length<5 ? "uxui" :"graphic"}>
+            <div className="layoutHelper">
+              {projects.map((el, index)=>(
+                <ProjectImage  key={el.src} imgSrc={el.src} index={index}></ProjectImage>
+              ))}
+            </div>
+            
+          
+          
         </div>
+
       </div>
       <div></div>
     </div>

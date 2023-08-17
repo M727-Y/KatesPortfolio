@@ -83,3 +83,11 @@
     justify-content:space-between;
     align-items: flex-end;
 }
+.profile{
+  display:flex;
+  width: 90%;
+  margin-left: 10%;
+  
+  flex-direction:row;
+  justify-content:flex-start;
+}

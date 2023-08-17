@@ -95,6 +95,19 @@ const ProjectImage = ({imgSrc, link,key}) => {
   )
 }
 
+const Name = styled.div`   
+    font-size:4rem;
+    font-weight:bold;
+    width:33%;
+    position: sticky;
+  
+
+    
+`
+const Objective = styled.div`
+    margin-top:4.5%;
+    width:33%;
+`
 
 export default function Gallery({ src, index, columnOffset }) {
   const [activeImage, setActiveImage] = useState(1);
@@ -102,23 +115,19 @@ export default function Gallery({ src, index, columnOffset }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    // This does not seem to work without a settimeout
     setTimeout(() => {
-      console.log(ref.current.offsetWidth);
-      console.log(ref.current.clientWidth);
-      console.log({ current: ref.current });
       let sections = gsap.utils.toArray(".gallery-item-wrapper");
-
+  
       gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
         ease: "none",
         scrollTrigger: {
           start: "top top",
-          trigger: ref.current,
+          trigger: ".gallery", // Update this to target the correct element
           scroller: "#main-container",
           pin: true,
           scrub: 0.5,
-          snap: 1 / (sections.length - 1),
+          snap: 1 / (sections.length - 1), // Make sure this is correct
           end: () => `+=${ref.current.offsetWidth}`,
         },
       });
@@ -131,8 +140,12 @@ export default function Gallery({ src, index, columnOffset }) {
   };
 
   return (
-    <section data-scroll-section className="section-wrapper gallery-wrap">
-
+    <section data-scroll-section className="section-wrapper gallery-wrap" id="scroll-target">
+      <div className="profile" data-scroll data-scroll-sticky data-scroll-target="#scroll-target">
+        <Name ><p>Kate Yugay</p></Name>
+        <Objective><p>a passionate UX/UI designer with a flair for creating seamless digital experiences that leave users enchanted and engaged. With a keen eye for detail and a love for problem-solving</p></Objective>
+      
+      </div> 
       <div className="gallery" ref={ref} >
         <div className="gallery-counter">
           {/* <span>{activeImage}</span>

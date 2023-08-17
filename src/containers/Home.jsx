@@ -71,7 +71,7 @@ const Home = () => {
         >
           <Navbar/>
           <Header />
-          <Featured/>
+          
           <Gallery />
         </div>
       )}

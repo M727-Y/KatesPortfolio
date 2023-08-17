@@ -11,26 +11,49 @@ import project3 from '../../images/ux/project3.png';
 import project4 from '../../images/ux/project4.png';
 const images = [
   {
-    src:
-      "https://images.unsplash.com/photo-1566204773863-cf63e6d4ab88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1345&q=100",
-    title: "Dracaena Trifasciata",
-    subtitle: "Live the Beauty",
-    category: "Shooting / Adv.Campaing",
+    projects: [
+      {
+          src:project1,
+          link:""
+      },
+      {
+          src:project2,
+          link:""
+      },
+      {
+          src:project3,
+          link:""
+      },
+      {
+          src:project4,
+          link:""
+      },
+    ]
   },
 
   {
-    src:
-      "https://images.unsplash.com/photo-1611145367651-6303b46e4040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2006&q=100",
-    title: "Golden Pothos",
-    subtitle: "Living Room",
-    category: "Shooting / Adv.Campaing",
+    projects: [
+      {
+          src:"",
+          link:""
+      },
+      {
+          src:project2,
+          link:""
+      },
+      {
+          src:project3,
+          link:""
+      },
+      {
+          src:project4,
+          link:""
+      },
+    ]
   },
 ];
 function GalleryItem({
-  src,
-  category,
-  subtitle,
-  title,
+  projects,
   updateActiveImage,
   index,
 }) {
@@ -52,7 +75,7 @@ function GalleryItem({
       <div></div>
       <div className={"gallery-item"}>
         <div className='uxui'>
-          {projectListUxUi.map((el, index)=>(
+          {projects.map((el, index)=>(
               <ProjectImage key={el.src} imgSrc={el.src} index={index}></ProjectImage>
           ))}
         </div>
@@ -71,25 +94,6 @@ const ProjectImage = ({imgSrc, link,key}) => {
     </div>
   )
 }
-
-const projectListUxUi = [
-  {
-      src:project1,
-      link:""
-  },
-  {
-      src:project2,
-      link:""
-  },
-  {
-      src:project3,
-      link:""
-  },
-  {
-      src:project4,
-      link:""
-  },
-]
 
 
 export default function Gallery({ src, index, columnOffset }) {
@@ -129,7 +133,7 @@ export default function Gallery({ src, index, columnOffset }) {
   return (
     <section data-scroll-section className="section-wrapper gallery-wrap">
 
-      <div className="gallery" ref={ref}>
+      <div className="gallery" ref={ref} >
         <div className="gallery-counter">
           {/* <span>{activeImage}</span>
           <span className="divider" />

@@ -6,6 +6,7 @@ const Name = styled.div`
     font-size:4rem;
     font-weight:bold;
     width:33%
+    
 `
 const Objective = styled.div`
     margin-top:4.5%;
